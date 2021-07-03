@@ -128,7 +128,7 @@ nav ul li a {
 }
 
 nav ul {
-    padding:none;
+    padding:0;
     margin:0;
 }
 
@@ -146,6 +146,7 @@ nav ul {
 #portfolio .container {
     display:flex;
     flex-flow:column nowrap;
+    padding-bottom:0;
 }
 
 #portfolio .container .container {
@@ -170,7 +171,6 @@ nav ul {
 }
 
 /* contact */
-
 #contact .container {
     display:flex;
     flex-flow:column wrap;
@@ -223,6 +223,29 @@ footer nav {
     display: none;
 }
 
+/* skills */
+#skills {
+    background:#fff;
+    padding-top:0;
+}
+#skills h1 {
+    margin-top:3em;
+    margin-bottom:0;
+}
+#skills .container .container {
+    display:flex;
+    flex-flow: column wrap;
+    padding-bottom:0;
+}
+#skills .card {
+    flex:1 1 100%;
+}
+#skills .card img {
+    width:auto;
+    height:10vh;
+    margin-bottom:1em;
+}
+
 /* for screens over 768px */
 
 @media only screen and (min-width:768px) {
@@ -269,6 +292,9 @@ footer nav {
     }
     #portfolio p {
         font-size:1.2em;
+    }
+    h1 {
+        font-family:"Montserrat",sans-serif;
     }
 
     /* portfolio */
@@ -324,6 +350,24 @@ footer nav {
         display:inline-block;
         margin:0 0.1em;
     }
+
+    /* skills */
+    #skills .container .container {
+        flex-flow:row wrap;
+    }
+    #skills .card {
+        flex-basis:20%;
+    }
+    #skills .card h2 {
+        font-size:1.5em;
+    }
+    #skills .card p {
+        font-size:1.2em;
+    }
+    #skills .card img {
+        width:100%;
+        height:auto;
+    }
 }
 
 /* for screens over 1024px wide */
@@ -356,5 +400,8 @@ footer nav {
     /* portfolio */
     #portfolio .card {
         flex:1 0 30%;
+    }
+    #portfolio {
+        background:none;
     }
 }
