@@ -1,0 +1,360 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* my css */
+/* main styling */
+
+:root {
+    --main-text:#4a4a4a;
+    --light-text:#7f7f7f;
+}
+
+body {
+    font-family:'Lato',sans-serif;
+    text-align:center;
+    background:#fafafa;
+}
+
+h1, h2, span, p {
+    color:var(--main-text);
+}
+
+h1 {
+    font-weight: 900;
+    font-size:1.5em;
+    text-transform: uppercase;
+    margin-bottom:1em;
+}
+
+.container {
+    padding:2em 1em;
+    box-sizing: border-box;
+    width:100%;
+}
+
+h2 {
+    font-size:1.25em;
+    font-weight:bold;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color:var(--main-text);
+    transition:color 300ms;
+}
+
+a:hover, a:focus {
+    transition:color 300ms;
+    color:var(--light-text);
+}
+
+/* header */
+
+#name {
+    text-transform: capitalize;
+}
+
+header {
+    display:flex;
+    flex-flow:column wrap;
+    align-items: center;
+}
+
+header nav {
+    width:100%;
+}
+
+header nav ul li {
+    background:white;
+    margin:0.5em 0;
+    padding:0.75em;
+    cursor:pointer;
+}
+
+header nav ul li:hover > a {
+    color:var(--light-text);
+    transition:300ms color;
+}
+
+nav ul li a {
+    font-weight:900;
+    text-transform: uppercase;
+}
+
+nav ul {
+    padding:none;
+    margin:0;
+}
+
+.profile {
+    margin:1em;
+    max-width:60vw;
+}
+
+/* portfolio */
+
+#portfolio {
+    background:#fff;
+}
+
+#portfolio .container {
+    display:flex;
+    flex-flow:column nowrap;
+}
+
+#portfolio .container .container {
+    padding-top:0;
+}
+
+.card {
+    margin:1.5em 0;
+    padding:0.5em;
+}
+
+.card:first-of-type {
+    margin-top:0.5em;
+}
+
+.card img {
+    width:100%;
+}
+
+.card h2 {
+    margin:0.5em 0;
+}
+
+/* contact */
+
+#contact .container {
+    display:flex;
+    flex-flow:column wrap;
+}
+
+#contact p {
+    margin:2em 0;
+}
+
+#contact p, #contact span, #contact a {
+    color:var(--light-text);
+}
+
+#contactinfo {
+    display:flex;
+    flex-flow:column wrap;
+    align-items:center;
+}
+
+.row {
+    display:flex;
+    flex-flow:row nowrap;
+}
+
+.col {
+    padding:0.7em;
+}
+
+.col:nth-child(2) {
+    font-weight:900;
+}
+
+/* footer */
+
+hr {
+    width:90%;
+    border-color:#e7e7e7;
+    opacity:30%;
+}
+
+footer {
+    position: sticky;
+    display:flex;
+    justify-content: space-between;
+    padding:2em;
+    font-weight:bold;
+}
+
+footer nav {
+    display: none;
+}
+
+/* for screens over 768px */
+
+@media only screen and (min-width:768px) {
+    /* header */
+    header nav ul li {
+        display:inline-block;
+        margin:2em 0;
+        padding:1em 0;
+        background:none;
+    }
+    header nav ul {
+        display:flex;
+        justify-content: space-evenly;
+    }
+    header nav ul li:hover {
+        background:none;
+    }
+    #headercontent {
+        display:flex;
+        flex-flow:row nowrap;
+        align-items: center;
+        font-size:1.5em;
+        font-weight:300;
+        text-align:left;
+    }
+    .profile {
+        order:1;
+    }
+    #name {
+        font-size:2em;
+        margin:0;
+    }
+    header nav {
+        width:70%;
+        margin:0 auto;
+    }
+
+    /* general style changes */
+    .container {
+        padding:3.5em 2em;
+    }
+    h2 {
+        font-size:1.3em;
+    }
+    #portfolio p {
+        font-size:1.2em;
+    }
+
+    /* portfolio */
+    #portfolio .container .container {
+        flex-flow:row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        padding:0;
+        width:100%;
+    }
+    #portfolio .card {
+        display: flex;
+        flex-flow:column wrap;
+        flex:1 0 45%;
+    }
+    .card:first-of-type {
+        margin:1.5em 0;
+    }
+
+    /* contact */
+    #contact .container {
+        padding:4em;
+    }
+    #contact h1 {
+        font-size:1.2em;
+        margin-bottom:2em;
+    }
+    #contact p {
+        font-size:1.5em;
+        width:80%;
+        margin:0 auto;
+    }
+    #contactinfo {
+        font-size:1.5em;
+        margin-top:1em;
+    }
+
+    /* footer */
+    footer {
+        font-size:1.25em;
+        padding:2em 2em 3em 2em;
+        font-weight:900;
+    }
+    footer > a {
+        display:none;
+    }
+
+    footer nav {
+        display:block;
+    }
+
+    footer nav ul li {
+        display:inline-block;
+        margin:0 0.1em;
+    }
+}
+
+/* for screens over 1024px wide */
+@media only screen and (min-width:1024px) {
+    /* general styles */
+    main {
+        padding:0 1.5em 1.5em 1.5em;
+    }
+    /* header */
+    header .container {
+        display:flex;
+        flex-flow:row wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header nav {
+        width:auto !important;
+        margin:0 !important;
+    }
+    header nav ul li {
+        margin:0 1.5em;
+    }
+    #headercontent {
+        align-items: flex-start;
+        padding:2em 0 0 0;
+    }
+    .profile {
+        margin:0 1em;
+    }
+    /* portfolio */
+    #portfolio .card {
+        flex:1 0 30%;
+    }
+}
